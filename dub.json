@@ -8,10 +8,10 @@
     "configurations": [
         {
             "name": "console",
+            "preBuildCommands-posix": ["gcc -c -o linenoise.a linenoise/linenoise.c"],
             "mainSourceFile": "src/console.d",
-            "dependencies": {
-                "linenoise": "~>1.0.0"
-            },
+            "lflags-posix": ["./linenoise.a"],
+            "sourceFiles": ["deimos/linenoise.di"],
             "targetType": "executable",
         },
         {
